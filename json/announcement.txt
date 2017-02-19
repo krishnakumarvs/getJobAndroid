@@ -1,0 +1,19 @@
+{
+  announcement: [
+    {
+      title: "",
+      discription: "",
+      
+    },
+    {
+      title: "",
+      discription: "",
+      
+    },
+    {
+      title: "",
+      discription: "",
+      
+    }
+  ]
+}

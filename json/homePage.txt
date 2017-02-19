@@ -1,0 +1,16 @@
+{
+  company: [
+    {
+      companyname: "",
+      companyphoto: ""
+    },
+    {
+      companyname: "",
+      companyphoto: ""
+    },
+    {
+      companyname: "",
+      companyphoto: ""
+    }
+  ]
+}
