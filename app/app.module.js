@@ -43,7 +43,7 @@ angular.module(appName, ['ionic'])
 
     // setup an abstract state for the tabs directive
 
-    .state('header', {
+        .state('header', {
         url: "/",
         templateUrl: "app/shared/templates/header.html",
         controller: 'HeaderController as Header',
@@ -57,7 +57,7 @@ angular.module(appName, ['ionic'])
         title: 'Login'
     })
 
-      .state('editProfile', {
+    .state('editProfile', {
         url: "/editProfile",
         templateUrl: "app/editProfile/templates/editProfile.html",
         controller: 'EditProfileController as EditProfile',
@@ -74,71 +74,56 @@ angular.module(appName, ['ionic'])
     .state('announcementDetails', {
         url: "/announcementDetails",
         templateUrl: "app/announcementDetails/templates/announcementDetails.html",
-        controller: 'AnnouncementDetailsController as announcementDetails',
+        controller: 'AnnouncementDetailsController as AnnouncementDetails',
         title: 'ANNOUNCEMENT DETAILS'
     })
-    
-     
 
-     // .state('editProfile', {
-     //     url: "editProfile",
-     //     title: 'EDIT PROFILE',
-     //     views: {
-     //         'menuContent': {
-     //             templateUrl: "app/editProfile/templates/editProfile.html",
-     //             controller: 'EditProfileController as EditProfile'
-     //         }
-     //     }
-     // })
+    .state('header.profile', {
+            url: "profile",
+            title: 'PROFILE',
+            views: {
+                'menuContent': {
+                    templateUrl: "app/profile/templates/profile.html",
+                    controller: 'ProfileController as Profile'
+                }
+            }
+        })
+        .state('header.setting', {
+            url: "setting",
+            title: 'SETTING',
+            views: {
+                'menuContent': {
+                    templateUrl: "app/setting/templates/setting.html",
+                    controller: 'SettingController as Setting'
+                }
+            }
+        })
 
-      .state('header.profile', {
-         url: "profile",
-         title: 'PROFILE',
-         views: {
-             'menuContent': {
-                 templateUrl: "app/profile/templates/profile.html",
-                 controller: 'ProfileController as Profile'
-             }
-         }
-     })
-      .state('header.setting', {
-         url: "setting",
-         title: 'SETTING',
-         views: {
-             'menuContent': {
-                 templateUrl: "app/setting/templates/setting.html",
-                 controller: 'SettingController as Setting'
-             }
-         }
-     })
-     
- .state('header.announcement', {
-         url: "announcement",
-         title: 'ANNOUNCEMENT ',
-         views: {
-             'menuContent': {
-                 templateUrl: "app/announcement/templates/announcement.html",
-                 controller: 'AnnouncementController as Announcement'
-             }
-         }
-     })
-     
-.state('header.notification', {
-         url: "notification",
-         title: 'NOTIFICATION ',
-         views: {
-             'menuContent': {
-                 templateUrl: "app/notification/templates/notification.html",
-                 controller: 'NotificationController as Notification'
-             }
-         }
-     })
-    
+    .state('header.announcement', {
+        url: "announcement",
+        title: 'ANNOUNCEMENT ',
+        views: {
+            'menuContent': {
+                templateUrl: "app/announcement/templates/announcement.html",
+                controller: 'AnnouncementController as Announcement'
+            }
+        }
+    })
 
-  
+    .state('header.notification', {
+        url: "notification",
+        title: 'NOTIFICATION ',
+        views: {
+            'menuContent': {
+                templateUrl: "app/notification/templates/notification.html",
+                controller: 'NotificationController as Notification'
+            }
+        }
+    })
 
 
- .state('header.feedback', {
+
+    .state('header.feedback', {
         url: "feedback",
         title: 'FEEDBACK',
         views: {
@@ -149,7 +134,7 @@ angular.module(appName, ['ionic'])
         }
     })
 
- .state('header.about', {
+    .state('header.about', {
         url: "about",
         title: 'ABOUT',
         views: {
@@ -161,7 +146,7 @@ angular.module(appName, ['ionic'])
     })
 
 
-.state('header.help', {
+    .state('header.help', {
         url: "help",
         title: 'HELP',
         views: {
@@ -175,6 +160,7 @@ angular.module(appName, ['ionic'])
     .state('header.home', {
         url: "home",
         title: 'HOME',
+        showHeader: true,
         views: {
             'menuContent': {
                 templateUrl: "app/homePage/templates/homePage.html",
@@ -183,24 +169,24 @@ angular.module(appName, ['ionic'])
         }
     })
 
-// .state('header.registration', {
-//         url: "registration",
-//         title: 'REGISTRATION',
-//         views: {
-//             'menuContent': {
-//                 templateUrl: "app/registration/templates/registration.html",
-//                 controller: 'RegistrationController as Registration'
-//             }
-//         }
-//     })
+    // .state('header.registration', {
+    //         url: "registration",
+    //         title: 'REGISTRATION',
+    //         views: {
+    //             'menuContent': {
+    //                 templateUrl: "app/registration/templates/registration.html",
+    //                 controller: 'RegistrationController as Registration'
+    //             }
+    //         }
+    //     })
 
-.state('registration', {
+    .state('registration', {
         url: "/registration",
         templateUrl: "app/registration/templates/registration.html",
         controller: 'RegistrationController as Registration',
         title: 'REGISTRATION'
     })
-  
+
 
     .state('header.settings', {
         url: "settings",

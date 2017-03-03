@@ -1,5 +1,5 @@
 <ion-view title={{pageTitle}}>
-	<ion-content class="login-page">
+	<ion-content class="">
 		<div class="ion-content ">
 			<div class="row">
 				<div class="col-10">
@@ -19,12 +19,12 @@
 				<div class="col-10">
 				</div>
 				<div class="col-40">
-					<img src="img/icon-user-default.png" >
+					<img style="width:100%;" ng-src="{{EditProfile.userImage}}" >
 				</div>
 				<div class="col-40">
-					<button class="button button-right">Browse...
-					</button>
-
+					<form enctype="multipart/form-data" method="post">
+						<input type="file" class="button-assertive" name="upfile" value="Upload" id="fileupload" ng-model="UnionPost.filee">
+					</form>
 				</div>
 				<div class="col-10">
 				</div>
@@ -47,7 +47,7 @@
 				<div class="col-10">
 				</div>
 				<div class="col">
-				<input type="text" class="userimage" placeholder="User name" name="name">
+				<input type="text" class="userimage" placeholder="User name" name="name" ng-model="EditProfile.userDetails.name">
 					</input>
 				</div>
 				<div class="col-10">
@@ -69,7 +69,7 @@
 				<div class="col-10">
 				</div>
 				<div class="col">
-				<textarea class="userimage" placeholder="Address" name="address"></textarea>
+				<textarea class="userimage" placeholder="Address" name="address" ng-model="EditProfile.userDetails.address"></textarea>
 				</div>
 				<div class="col-10">
 				</div>
@@ -90,7 +90,7 @@
 				<div class="col-10">
 				</div>
 				<div class="col">
-				<input type="text" class="userimage" placeholder="dd-mm-yyyy" name="dob">
+				<input type="text" class="userimage" placeholder="dd-mm-yyyy" name="dob" ng-model="EditProfile.userDetails.dob">
 					</input>
 				</div>
 				<div class="col-10">
@@ -101,7 +101,7 @@
 				<div class="col-10">
 				</div>
 				<div class="col">
-					<h6>Age
+					<h6>Email Id
 					</h6>
 				</div>
 				<div class="col-10">
@@ -112,7 +112,7 @@
 				<div class="col-10">
 				</div>
 				<div class="col">
-				<input type="text" class="userimage" placeholder="Age" name="age">
+				<input type="text" class="userimage" placeholder="Age" name="age" ng-model="EditProfile.userDetails.email_id">
 					</input>
 				</div>
 				<div class="col-10">
@@ -134,7 +134,7 @@
 				<div class="col-10">
 				</div>
 				<div class="col">
-				<input type="text" class="userimage" placeholder="Phone" name="phone">
+				<input type="text" class="userimage" placeholder="Phone" name="phone" ng-model="EditProfile.userDetails.phone">
 					</input>
 				</div>
 				<div class="col-10">
@@ -157,14 +157,14 @@
 				<div class="col-10">
 				</div>
 				<div class="col">
-				<input type="text" class="userimage" placeholder="Experience" name="experience">
+				<input type="text" class="userimage" placeholder="Experience" name="experience" ng-model="EditProfile.userDetails.experience">
 					</input>
 				</div>
 				<div class="col">
-					<select name="period" style="height:38px;width:100%">
+					<!-- <select name="period" style="height:38px;width:100%">
                 	<option value="Month">Month</option>
                     <option value="Year">Year</option>
-                	</select>
+                	</select> -->
 				</input>
 				</div>
 				<div class="col-10">
@@ -187,7 +187,7 @@
 				<div class="col-10">
 				</div>
 				<div class="col">
-				<input type="text" class="userimage" placeholder="Qualification" name="qualification">
+				<input type="text" class="userimage" placeholder="Qualification" name="qualification" ng-model="EditProfile.userDetails.qualification">
 					</input>
 				</div>
 				<div class="col-10">
@@ -201,17 +201,13 @@
 				</div>
 				<div class="col">
 					<center>
-						<input type="button" class="userimage button button-clear button-assertive" name="Update" value="Update" ng-click="EditProfile.authinticateUser()" style="float: right;" />
+						<input type="button" class="userimage button button-clear button-assertive" name="Update" value="Update" ng-click="EditProfile.editUserDetails()" style="float: right;" />
 						
 					</center>
 				</div>
 				<div class="col-10">
 				</div>
 			</div>
-
-
- 
-  	
 		</div>
 	</ion-content>
 </ion-view>

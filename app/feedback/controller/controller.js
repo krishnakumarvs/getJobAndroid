@@ -11,14 +11,13 @@
         .controller('FeedbackController', Feedback);
 
 
-    Feedback.$inject = ['$state', '$filter'];
+    Feedback.$inject = ['$state', '$filter', '$http', 'config'];
 
-    function Feedback($state, $filter) {
+    function Feedback($state, $filter, $http, config) {
         var feedbackVm = this;
         // Variable declarations
         feedbackVm.currentUser = {};
-        feedbackVm.currentUser.email = "";
-        feedbackVm.currentUser.password = "";
+        feedbackVm.sendFeedback = sendFeedback;
         feedbackVm.category = "Admin";
 
         feedbackVm.selectBoxChanged = selectBoxChanged;
@@ -26,10 +25,10 @@
         feedbackVm.showCompanyName = false;
 
 
-        function selectBoxChanged () {
+        function selectBoxChanged() {
             console.log(feedbackVm.category);
-            if(feedbackVm.category=="Company") {
-                feedbackVm.showCompanyName = true;                
+            if (feedbackVm.category == "Company") {
+                feedbackVm.showCompanyName = true;
             } else {
                 feedbackVm.showCompanyName = false;
             }
@@ -42,6 +41,36 @@
 
         function activate() {
             // To initialize anything before the project starts
+        }
+
+        function sendFeedback() {
+            $http({
+                method: "POST",
+                url: config.API_URL.sendFeedback,
+                data: {
+                    userId: config.userDetails.userId,
+                    feedbackSubject: feedbackVm.feedbackSubject,
+                    feedbackDescription: feedbackVm.feedbackDescription,
+                    feedbackTo: feedbackVm.category,
+                    companyName: (feedbackVm.category == "Company") ? feedbackVm.companyName : null
+                }
+            }).then(function mySucces(response) {
+                console.log(response.data);
+
+                feedbackVm.feedbackSubject = "";
+                feedbackVm.feedbackDescription = "";
+                feedbackVm.feedbackTo = "";
+                feedbackVm.companyName = "";
+
+                var api_result = response.data.result;
+                if (api_result) {
+                    alert("Feedback posted successfully");
+                } else {
+                    alert(response.data.description);
+                }
+            }, function myError(response) {
+                console.log(response.statusText);
+            });
         }
 
 

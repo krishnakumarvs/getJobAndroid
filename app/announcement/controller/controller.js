@@ -11,9 +11,9 @@
         .controller('AnnouncementController', Announcement);
 
 
-    Announcement.$inject = ['$state', '$filter'];
+    Announcement.$inject = ['$state', '$filter', '$http', '$timeout', 'config'];
 
-    function Announcement($state, $filter) {
+    function Announcement($state, $filter, $http, $timeout, config) {
         var announcementVm = this;
         // Variable declarations
         announcementVm.currentUser = {};
@@ -21,18 +21,45 @@
         announcementVm.currentUser.password = "";
 
         // Function declarations
-        announcementVm.authinticateUser = authinticateUser;
+        announcementVm.showDetails = showDetails;
         announcementVm.SignUp = SignUp;
 
         activate();
 
         function activate() {
-            // To initialize anything before the project starts
+            if (!config.userDetails.name) {
+                $state.go('login');
+            } else {
+                $http({
+                    method: "POST",
+                    url: config.API_URL.getAnnouncement,
+                    data: {
+                        userId: config.userDetails.userId
+                    }
+                }).then(function mySucces(response) {
+                    var api_result = response.data.result;
+                    if (api_result) {
+                        console.log("Announcement fetching success");
+                        console.log(response.data.payload);
+                        announcementVm.allAnnouncement = response.data.payload;
+                    } else {
+                        alert(response.data.description);
+                    }
+                }, function myError(response) {
+                    console.log(response.statusText);
+                });
+            }
         }
 
 
-        function authinticateUser() {
+        function showDetails(announcement) {
+            config.announcement = announcement;
             console.log("Clicked on authenticate user");
+            $timeout(goNow, 100);
+
+        }
+
+        function goNow() {
             $state.go('announcementDetails');
         }
 

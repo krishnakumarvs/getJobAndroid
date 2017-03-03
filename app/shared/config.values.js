@@ -1,40 +1,35 @@
 (function() {
 
-    var uiMessages = {
-        registerationSuccess: "Successfully registered. Please login.",
-        registerationFailed: "Could register, please try after some time",
-        incorrectPassword: "Password do not match"
+    var prefix = "http://localhost:4567/";
+    var API_URL = {
+        serverUrl: prefix,
+        login: prefix + "login",
+        getAnnouncement: prefix + "getAnnouncement",
+        getNotifications: prefix + "getNotifications",
+        sendFeedback: prefix + "sendFeedback",
+        editUserDetails: prefix + "editUserDetails",
+        fileUpload: prefix + "upload",
+        applyJob: prefix + "applyJob"
     };
 
-    var localStorageKeys = {
-        userDetails: "userDetails",
-        taskDetails: "taskDetails",
-        reminderDetails: "reminderDetails"
-    };
+    function recalculateUrls(prefix) {
+        console.log(API_URL);
+        console.log(prefix);
+        API_URL = {
+            serverUrl: prefix,
+            login: prefix + "login"
+        }
+        console.log(API_URL);
+        config.API_URL = API_URL;
+    }
 
-    var priority = {
-        high: "high",
-        medium: "medium",
-        low: "low"
-    };
-
-    var generalStatus = {
-        created: 0,
-        completed: 1,
-        deleted: 2
-    };
-
-    var firebaseKeys = {
-        reminder: "reminder",
-        task: "task"
-    };
+    var userDetails = {};
 
     var config = {
-        uiMessages: uiMessages,
-        localStorageKeys: localStorageKeys,
-        firebaseKeys: firebaseKeys,
-        priority: priority,
-        generalStatus: generalStatus
+        API_URL: API_URL,
+        userDetails: userDetails,
+        prefix: prefix,
+        recalculateUrls: recalculateUrls
     };
 
     angular.module(appName).value('config', config);

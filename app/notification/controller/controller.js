@@ -11,34 +11,42 @@
         .controller('NotificationController', Notification);
 
 
-    Notification.$inject = ['$state', '$filter'];
+    Notification.$inject = ['$state', '$filter', '$http', 'config'];
 
-    function Notification($state, $filter) {
+    function Notification($state, $filter, $http, config) {
         var notificationVm = this;
         // Variable declarations
         notificationVm.currentUser = {};
         notificationVm.currentUser.email = "";
         notificationVm.currentUser.password = "";
 
-        // Function declarations
-        notificationVm.authinticateUser = authinticateUser;
-        notificationVm.SignUp = SignUp;
-
         activate();
 
         function activate() {
-            // To initialize anything before the project starts
+            if (!config.userDetails.name) {
+                $state.go('login');
+            } else {
+                $http({
+                    method: "POST",
+                    url: config.API_URL.getNotifications,
+                    data: {
+                        userId: config.userDetails.userId
+                    }
+                }).then(function mySucces(response) {
+                    var api_result = response.data.result;
+                    if (api_result) {
+                        console.log("notifications fetching success");
+                        console.log(response.data.payload);
+                        notificationVm.notifications = response.data.payload;
+                    } else {
+                        alert(response.data.description);
+                    }
+                }, function myError(response) {
+                    console.log(response.statusText);
+                });
+            }
         }
 
-
-        function authinticateUser() {
-            console.log("Clicked on authenticate user");
-            $state.go('header.home');
-        }
-
-        function SignUp() {
-            $state.go('registration');
-        }
     }
 
 })();

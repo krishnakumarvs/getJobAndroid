@@ -1,44 +1,47 @@
  (function() {
-    'use strict';
+     'use strict';
 
-    /**
-     * Get the main module (shared for Workout).
-     */
-    angular.module(appName)
-        /**
-         * Login Controller.
-         */
-        .controller('ProfileController', Profile);
-
-
-    Profile.$inject = ['$state', '$filter'];
-
-    function Profile($state, $filter) {
-        var profileVm = this;
-        // Variable declarations
-        profileVm.currentUser = {};
-        profileVm.currentUser.email = "";
-        profileVm.currentUser.password = "";
-
-        // Function declarations
-        profileVm.authinticateUser = authinticateUser;
-        profileVm.SignUp = SignUp;
-
-        activate();
-
-        function activate() {
-            // To initialize anything before the project starts
-        }
+     /**
+      * Get the main module (shared for Workout).
+      */
+     angular.module(appName)
+         /**
+          * Login Controller.
+          */
+         .controller('ProfileController', Profile);
 
 
-        function authinticateUser() {
-            console.log("Clicked on authenticate user");
-            $state.go('editProfile');
-        }
+     Profile.$inject = ['$state', '$filter', 'config'];
 
-        function SignUp() {
-            $state.go('registration');
-        }
-    }
+     function Profile($state, $filter, config) {
+         var profileVm = this;
+         // Variable declarations
+         profileVm.currentUser = {};
 
-})();
+         // Function declarations
+         profileVm.updateProfile = updateProfile;
+
+         activate();
+
+         function activate() {
+             if (!config.userDetails.name) {
+                 $state.go('login');
+             } else {
+                 profileVm.userDetails = config.userDetails;
+                 if (config.userDetails.photo) {
+                     profileVm.userImage = config.API_URL.serverUrl + config.userDetails.photo;
+                 } else {
+                     profileVm.userImage = "img/person.png";
+                 }
+                 console.log("profileVm.userImage" + profileVm.userImage);
+             }
+         }
+
+
+         function updateProfile() {
+             console.log("Clicked on update profile");
+             $state.go('editProfile');
+         }
+     }
+
+ })();
