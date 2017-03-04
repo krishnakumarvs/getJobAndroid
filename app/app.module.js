@@ -64,6 +64,13 @@ angular.module(appName, ['ionic'])
         title: 'EDIT PROFILE'
     })
 
+     .state('companyDetails', {
+        url: "/companyDetails",
+        templateUrl: "app/companyDetails/templates/companyDetails.html",
+        controller: 'CompanyDetailsController as CompanyDetails',
+        title: 'COMPANY'
+    })
+
     .state('firstPage', {
         url: "/firstPage",
         templateUrl: "app/firstPage/templates/firstPage.html",

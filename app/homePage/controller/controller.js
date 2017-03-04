@@ -15,6 +15,8 @@
     function Home($state) {
         var tasksVm = this;
         tasksVm.GotoViewTask = GotoViewTask;
+        tasksVm.goToCompanyDetails = goToCompanyDetails;
+       
         activate();
 
         function activate() {
@@ -22,7 +24,13 @@
         }
 
         function GotoViewTask () {
+             
             
+        }
+
+        function goToCompanyDetails(){
+            console.log("Go to company details");
+             $state.go('companyDetails');
         }
     }
 })();

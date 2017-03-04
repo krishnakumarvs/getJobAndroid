@@ -45,10 +45,10 @@
                      $state.go('header.help');
                     break;
                 case 8:
-                     $state.go('login');
+                     $state.go('header.setting');
                     break;
                     case 9:
-                     $state.go('header.setting');
+                     $state.go('login');
                     break;    
                 default:
                     //$state.go('header.tasks')

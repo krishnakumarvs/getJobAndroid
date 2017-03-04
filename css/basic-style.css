@@ -105,3 +105,31 @@ textarea.background-modify{
 .button-right{
   vertical-align: right; 
 }
+.text_padding{
+  padding-left: 10px !important;
+    border-radius: 10px !important;
+  }
+
+  
+    .b_color{
+      border-color: lightblue !important;
+    background-color: #0be0af !important;
+    color: #fff !important;
+    }
+
+    .button_font_color{
+      color : teal !important;
+
+    }
+
+    .heading{
+      text-align: -webkit-center;
+    font-size: 150%;
+    color: purple;
+    }
+
+    .textarea_padding{
+      height: 100px;
+    padding-top: 12px;
+    border-radius: 14px;
+    }

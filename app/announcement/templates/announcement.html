@@ -3,12 +3,10 @@
 		<div class="ion-content ">
 			
 
-			<label class="item item-input item-floating-label" ng-repeat="announcement in Announcement.allAnnouncement">
+		<label class="item item-input item-floating-label" ng-repeat="announcement in Announcement.allAnnouncement">
 			<div class="row">
-				
 				<div class="col-10"></div>
 				<div class="col">
-					
 					<div class="row" style="color:white;">
 						<div class="col">{{announcement.name}}
 						</div>
@@ -17,10 +15,12 @@
 						<div class="col">{{announcement.description}}
 						</div>
 					</div>
-                    <div class="row"><input type="button" class="row announcement-button" value="Details" name="Details" ng-click="Announcement.showDetails(announcement)">
-						</input></div></div>
+                    <div class="row"><input type="button" class="row announcement-button" value="Details" name="Details" ng-click="Announcement.showDetails(announcement)"></input>
+                    </div>
+                </div>
 				<div class="col-10"></div>
-  			</div></label>
+  			</div>
+  		</label>
 
 			<!-- <label class="item item-input item-floating-label"><div class="row">
 				<div class="col-10"></div>
