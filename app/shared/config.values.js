@@ -9,7 +9,8 @@
         sendFeedback: prefix + "sendFeedback",
         editUserDetails: prefix + "editUserDetails",
         fileUpload: prefix + "upload",
-        applyJob: prefix + "applyJob"
+        applyJob: prefix + "applyJob",
+        registration: prefix + "registration"
     };
 
     function recalculateUrls(prefix) {
