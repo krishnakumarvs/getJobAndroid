@@ -22,7 +22,7 @@
 
         // Function declarations
         settingVm.authinticateUser = authinticateUser;
-        settingVm.SignUp = SignUp;
+        settingVm.Change = Change;
 
         activate();
 
@@ -36,8 +36,8 @@
             $state.go('setting');
         }
 
-        function SignUp() {
-            $state.go('registration');
+        function Change() {
+            $state.go('changePassword');
         }
     }
 

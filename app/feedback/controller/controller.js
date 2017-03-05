@@ -41,6 +41,9 @@
 
         function activate() {
             // To initialize anything before the project starts
+            if (!config.userDetails.name) {
+                $state.go('login');
+            }
         }
 
         function sendFeedback() {

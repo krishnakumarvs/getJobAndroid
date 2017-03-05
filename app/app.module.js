@@ -64,6 +64,13 @@ angular.module(appName, ['ionic'])
         title: 'EDIT PROFILE'
     })
 
+.state('changePassword', {
+        url: "/changePassword",
+        templateUrl: "app/changePassword/templates/changePassword.html",
+        controller: 'ChangePasswordController as ChangePassword',
+        title: 'CHANGE PASSWORD'
+    })
+
      .state('companyDetails', {
         url: "/companyDetails",
         templateUrl: "app/companyDetails/templates/companyDetails.html",
