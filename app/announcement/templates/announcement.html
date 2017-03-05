@@ -2,9 +2,7 @@
 	<ion-content class="">
 		<div class="ion-content ">
 			
-
-		<label class="item item-input item-floating-label" ng-repeat="announcement in Announcement.allAnnouncement">
-			<div class="row">
+			<div class="row after_border" ng-repeat="announcement in Announcement.allAnnouncement">
 				<div class="col-10"></div>
 				<div class="col">
 					<div class="row" style="color:white;">
@@ -15,24 +13,45 @@
 						<div class="col">{{announcement.description}}
 						</div>
 					</div>
-                    <div class="row"><input type="button" class="row announcement-button" value="Details" name="Details" ng-click="Announcement.showDetails(announcement)"></input>
+                    <div class="row">
+                    	<div class="col announcement-button">
+                    	<input type="button" class="announcement-button" value="Details" name="Details" ng-click="Announcement.showDetails(announcement)"></div>
                     </div>
                 </div>
 				<div class="col-10"></div>
   			</div>
-  		</label>
 
-			<!-- <label class="item item-input item-floating-label"><div class="row">
+		<!-- <label class="item item-input item-floating-label" >
+			
+  		</label> -->
+
+			
+<!-- <label class="item item-input item-floating-label" ng-repeat="notification in Notification.notifications">
+			<div class="row">
 				<div class="col-10"></div>
-				<div class="col ">
+				<div class="col">
 					
-					<div class="row">sadasdssd </div>
-					<div class="row">Most famous company in this country.It is the highest profit earning company.good</div>
-					<div class="row">
-						<input type="button" class="row announcement-button" value="Details" name="Details" ng-click="Announcement.authinticateUser()">
-						</input></div></div>
+
+					<div class="row" style="color:white;">
+						<div class="col">{{announcement.name}}
+						</div>
+					</div>
+					<div class="row" style="color:white;">
+						<div class="col">{{announcement.description}}
+						</div>
+					</div>
+                    <div class="row">
+                    	<div class="col announcement-button">
+                    	<input type="button" value="Details" name="Details" ng-click="Announcement.showDetails(announcement)"></div>
+                    </div>
+
+
+				</div>
 				<div class="col-10"></div>
-  			</div></label> -->
+  			</div>
+  		</label> -->
+
+
 
 		</div>
 	</ion-content>

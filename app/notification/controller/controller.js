@@ -19,7 +19,7 @@
         notificationVm.currentUser = {};
         notificationVm.currentUser.email = "";
         notificationVm.currentUser.password = "";
-
+        
         activate();
 
         function activate() {

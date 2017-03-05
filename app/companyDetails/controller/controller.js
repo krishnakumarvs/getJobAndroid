@@ -12,7 +12,7 @@
          var companyDetailsVm = this;
          // Variable declarations
          companyDetailsVm.currentUser = {};
-
+         companyDetailsVm.Gotopage=Gotopage;
         
          activate();
 
@@ -29,8 +29,10 @@
                  console.log("companyDetailsVm.userImage" + companyDetailsVm.userImage);
              }
          }
-
-
+         function Gotopage(){
+            $state.go('header.home');
+         }
+         
        
      }
 

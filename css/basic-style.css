@@ -33,6 +33,10 @@ ion-nav-view, .pane {
   font-size: 18px;
 }
 
+.after_border{
+  border-bottom: 1px solid white;
+}
+
 .no-padding {
   padding: 0px !important;
 }
