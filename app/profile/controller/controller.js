@@ -27,7 +27,10 @@
              if (!config.userDetails.name) {
                  $state.go('login');
              } else {
+                console.log("Inside activate");
+
                  profileVm.userDetails = config.userDetails;
+                 console.log(profileVm.userDetails);
                  if (config.userDetails.photo) {
                      profileVm.userImage = config.API_URL.serverUrl + config.userDetails.photo;
                  } else {

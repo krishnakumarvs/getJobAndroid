@@ -6,7 +6,7 @@
          .controller('CompanyDetailsController', CompanyDetails);
 
 
-     Profile.$inject = ['$state', '$filter', 'config'];
+     CompanyDetails.$inject = ['$state', '$filter', 'config'];
 
      function CompanyDetails($state, $filter, config) {
          var companyDetailsVm = this;

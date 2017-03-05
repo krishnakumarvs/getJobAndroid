@@ -195,6 +195,14 @@ angular.module(appName, ['ionic'])
     })
 
 
+    .state('forgotPassword', {
+        url: "/forgotPassword",
+        templateUrl: "app/forgotPassword/templates/forgotPassword.html",
+        controller: 'ForgotPasswordController as ForgotPassword',
+        title: 'FORGOTPASSWORD'
+    })
+
+
     .state('header.settings', {
         url: "settings",
         parent: 'header',

@@ -22,6 +22,7 @@
         // Function declarations
         loginVm.authinticateUser = authinticateUser;
         loginVm.SignUp = SignUp;
+        loginVm.ForgotPassword = ForgotPassword;
 
         activate();
 
@@ -59,6 +60,11 @@
 
         function SignUp() {
             $state.go('registration'); //change state go to app.module
+        }
+
+
+        function ForgotPassword(){
+            $state.go('forgotPassword');
         }
     }
 
