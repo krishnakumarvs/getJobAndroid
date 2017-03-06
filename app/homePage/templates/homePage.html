@@ -9,10 +9,6 @@
 				<div class="col-20"></div>
 			</div>
 
-
-			
-
-
 			<div class="row">
 			    <div class="col-10"></div>
 			    <div class="col">
@@ -26,27 +22,24 @@
             	<div class="col-10"></div>
 			</div>
 
-
 			<div class="row"></div>
 			<br>
 
-
-
 			<div class="after_border">
+				
+				<a class="item item-thumbnail-left" ng-click="Home.goToCompanyDetails(company)" ng-repeat="company in Home.allCompanies">
+			      <img src="img/logo.jpg">
+			      <h2>{{company.name}}</h2>
+			      <div style="white-space: pre-line;">{{company.description}}</div>
+			    </a>
+			    
+			  <!-- <a class="item item-thumbnail-left" ng-click="Home.goToCompanyDetails()">
+			    <img src="img/logo.jpg">
+			    <h2>Company name</h2>
+			    <p>Discription</p>
+			  </a> -->
 
-    <a class="item item-thumbnail-left" ng-click="Home.goToCompanyDetails()">
-      <img src="img/logo.jpg">
-      <h2>Company name</h2>
-      <p>Discription</p>
-    </a>
-   
-    <a class="item item-thumbnail-left" ng-click="Home.goToCompanyDetails()">
-      <img src="img/logo.jpg">
-      <h2>Company name</h2>
-      <p>Discription</p>
-    </a>
-
-</div>
+			</div>
 
 
            

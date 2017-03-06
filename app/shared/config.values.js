@@ -10,7 +10,8 @@
         editUserDetails: prefix + "editUserDetails",
         fileUpload: prefix + "upload",
         applyJob: prefix + "applyJob",
-        registration: prefix + "registration"
+        registration: prefix + "registration",
+        getAllCompanies: prefix + "getAllCompanies"
     };
 
     function recalculateUrls(prefix) {

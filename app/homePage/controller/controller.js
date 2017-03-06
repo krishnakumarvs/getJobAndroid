@@ -5,32 +5,58 @@
      * Get the main module (shared for Workout).
      */
     angular.module(appName)
-    /**
-     * Task Page Controller.
-     */
-    .controller('HomePageController', Home);
+        /**
+         * Task Page Controller.
+         */
+        .controller('HomePageController', Home);
 
-    Home.$inject = ['$state'];
+    Home.$inject = ['$state', '$http', 'config', '$timeout'];
 
-    function Home($state) {
-        var tasksVm = this;
-        tasksVm.GotoViewTask = GotoViewTask;
-        tasksVm.goToCompanyDetails = goToCompanyDetails;
-       
+    function Home($state, $http, config, $timeout) {
+        var homePageVm = this;
+        homePageVm.GotoViewTask = GotoViewTask;
+        homePageVm.goToCompanyDetails = goToCompanyDetails;
+
         activate();
 
         function activate() {
+            if (!config.userDetails.name) {
+                $state.go('login');
+            } else {
+                $http({
+                    method: "POST",
+                    url: config.API_URL.getAllCompanies,
+                    data: {
+                        userId: config.userDetails.userId
+                    }
+                }).then(function mySucces(response) {
+                    var api_result = response.data.result;
+                    if (api_result) {
+                        console.log("notifications fetching success");
+                        console.log(response.data.payload);
+                        homePageVm.allCompanies = response.data.payload;
+                    } else {
+                        alert(response.data.description);
+                    }
+                }, function myError(response) {
+                    console.log(response.statusText);
+                });
+            }
+        }
+
+        function GotoViewTask() {
+
 
         }
 
-        function GotoViewTask () {
-             
-            
+        function goToCompanyDetails(company) {
+            console.log(company);
+            config.clickedCompany = company;
+            $timeout(goNow, 100);
         }
 
-        function goToCompanyDetails(){
-            console.log("Go to company details");
-             $state.go('companyDetails');
+        function goNow() {
+            $state.go('companyDetails');
         }
     }
 })();

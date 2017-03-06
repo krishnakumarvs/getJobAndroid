@@ -2,8 +2,8 @@
      'use strict';
 
      angular.module(appName)
-        
-         .controller('CompanyDetailsController', CompanyDetails);
+
+     .controller('CompanyDetailsController', CompanyDetails);
 
 
      CompanyDetails.$inject = ['$state', '$filter', 'config'];
@@ -12,28 +12,23 @@
          var companyDetailsVm = this;
          // Variable declarations
          companyDetailsVm.currentUser = {};
-         companyDetailsVm.Gotopage=Gotopage;
-        
+         companyDetailsVm.Gotopage = Gotopage;
+
          activate();
 
          function activate() {
-             if (!config.userDetails.name) {
+             if (!config.clickedCompany) {
                  $state.go('login');
              } else {
-                 companyDetailsVm.userDetails = config.userDetails;
-                 if (config.userDetails.photo) {
-                     companyDetailsVm.userImage = config.API_URL.serverUrl + config.userDetails.photo;
-                 } else {
-                     companyDetailsVm.userImage = "img/person.png";
-                 }
-                 console.log("companyDetailsVm.userImage" + companyDetailsVm.userImage);
+                 companyDetailsVm.clickedCompany = config.clickedCompany;
              }
          }
-         function Gotopage(){
-            $state.go('header.home');
+
+         function Gotopage() {
+             $state.go('header.home');
          }
-         
-       
+
+
      }
 
  })();
