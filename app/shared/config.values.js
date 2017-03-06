@@ -11,7 +11,8 @@
         fileUpload: prefix + "upload",
         applyJob: prefix + "applyJob",
         registration: prefix + "registration",
-        getAllCompanies: prefix + "getAllCompanies"
+        getAllCompanies: prefix + "getAllCompanies",
+        forgotPassword: prefix + "forgotPassword"
     };
 
     function recalculateUrls(prefix) {
