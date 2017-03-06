@@ -12,7 +12,8 @@
         applyJob: prefix + "applyJob",
         registration: prefix + "registration",
         getAllCompanies: prefix + "getAllCompanies",
-        forgotPassword: prefix + "forgotPassword"
+        forgotPassword: prefix + "forgotPassword",
+        deleteNotification: prefix + "deleteNotification"
     };
 
     function recalculateUrls(prefix) {

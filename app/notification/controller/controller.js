@@ -19,8 +19,33 @@
         notificationVm.currentUser = {};
         notificationVm.currentUser.email = "";
         notificationVm.currentUser.password = "";
-        
+
+        notificationVm.deleteNotification = deleteNotification;
+
         activate();
+
+
+        function deleteNotification(notification) {
+            console.log(notification);
+            $http({
+                method: "POST",
+                url: config.API_URL.deleteNotification,
+                data: {
+                    notificationId: notification.id
+                }
+            }).then(function mySucces(response) {
+                var api_result = response.data.result;
+                if (api_result) {
+                    console.log("Notification deleted success");
+                    activate();
+                } else {
+                    alert(response.data.description);
+                }
+            }, function myError(response) {
+                console.log(response.statusText);
+            });
+
+        }
 
         function activate() {
             if (!config.userDetails.name) {
