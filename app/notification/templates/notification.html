@@ -4,7 +4,7 @@
 				<div class="row after_border" ng-repeat="notification in Notification.notifications" ng-if="Notification.notifications.length>0">
 				<div class="col-10"></div>
 				<div class="col">
-					<div class="row icon_align" ><img src="img/close2.png" ng-click="Notification.deleteNotification(notification)"></div>
+					<div class="row icon_align icon-size" ><img src="img/close.png" ng-click="Notification.deleteNotification(notification)"></div>
 					<div class="row">{{notification.title}}</div>
 					<div class="row">{{notification.description}}</div>
 				</div>
