@@ -17,6 +17,8 @@
         homePageVm.GotoViewTask = GotoViewTask;
         homePageVm.goToCompanyDetails = goToCompanyDetails;
 
+        homePageVm.serverUrl = config.API_URL.serverUrl; 
+
         activate();
 
         function activate() {

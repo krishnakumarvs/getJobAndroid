@@ -28,7 +28,9 @@
 			<div class="after_border">
 				
 				<a class="item item-thumbnail-left" ng-click="Home.goToCompanyDetails(company)" ng-repeat="company in Home.allCompanies">
-			      <img src="img/logo.jpg">
+			      <img src="img/logo.jpg" ng-if="!company.photo">
+			      <img ng-src="{{Home.serverUrl+company.photo}}" ng-if="company.photo">
+
 			      <h2>{{company.name}}</h2>
 			      <div style="white-space: pre-line;">{{company.description}}</div>
 			    </a>

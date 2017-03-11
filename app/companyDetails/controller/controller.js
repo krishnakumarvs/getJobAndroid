@@ -14,6 +14,8 @@
          companyDetailsVm.currentUser = {};
          companyDetailsVm.Gotopage = Gotopage;
 
+         companyDetailsVm.serverUrl = config.API_URL.serverUrl; 
+
          activate();
 
          function activate() {
