@@ -47,7 +47,9 @@
                 case 8:
                      $state.go('header.setting');
                     break;
-                    case 9:
+                case 9:
+                     $state.go('header.message');
+                case 10:
                      $state.go('login');
                     break;    
                 default:

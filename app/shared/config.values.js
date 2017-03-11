@@ -5,6 +5,7 @@
         serverUrl: prefix,
         login: prefix + "login",
         getAnnouncement: prefix + "getAnnouncement",
+        getMessages: prefix + "getMessages",
         getNotifications: prefix + "getNotifications",
         sendFeedback: prefix + "sendFeedback",
         editUserDetails: prefix + "editUserDetails",

@@ -141,3 +141,9 @@ textarea.background-modify{
      padding-left: 90%;
 
     }
+    .font_set{
+      color: blue !important;
+    padding-left: 40px !important;
+    font-style: oblique !important;
+    font-weight: 900 !important;
+    }

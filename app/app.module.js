@@ -171,6 +171,18 @@ angular.module(appName, ['ionic'])
         }
     })
 
+
+    .state('header.message', {
+        url: "message",
+        title: 'MESSAGE',
+        views: {
+            'menuContent': {
+                templateUrl: "app/message/templates/message.html",
+                controller: 'MessageController as Message'
+            }
+        }
+    })
+
     .state('header.home', {
         url: "home",
         title: 'HOME',
