@@ -1,0 +1,27 @@
+<ion-view title={{pageTitle}}>
+	<ion-content class="">
+		<div class="ion-content ">
+			
+			<div class="row after_border" ng-repeat="message in Message.messages" ng-if="Message.messages.length>0">
+				<div class="col-10"></div>
+				<div class="col">
+					<div class="row icon_align" ><img src="img/close2.png" ng-click="Messages.deleteMessage(message)"></div>
+					<div class="row">{{message.title}}</div>
+					<div class="row">{{message.comppanyname}}</div>
+					<div class="row">{{message.description}}</div>
+					<div class="row">{{message.post}}</div>
+					<div class="row">{{message.date}}</div>
+					<div class="row">{{message.time}}</div>
+
+				</div>
+				<div class="col-10"></div>
+  			</div>
+
+  			<div><br><center style="font-weight: bold;" ng-if="Message.messages.length==0">No new messages</center>
+  			</div>
+  			</div>	
+		
+
+		</div>
+	</ion-content>
+</ion-view>
