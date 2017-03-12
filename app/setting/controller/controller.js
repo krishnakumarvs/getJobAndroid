@@ -23,6 +23,7 @@
         // Function declarations
         settingVm.authinticateUser = authinticateUser;
         settingVm.Change = Change;
+        settingVm.ChangeNotification = ChangeNotification;
 
         activate();
 
@@ -38,6 +39,9 @@
 
         function Change() {
             $state.go('changePassword');
+        }
+        function ChangeNotification{
+            $state.go('changeNotification');
         }
     }
 

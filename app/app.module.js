@@ -71,6 +71,14 @@ angular.module(appName, ['ionic'])
         title: 'CHANGE PASSWORD'
     })
 
+
+.state('changeNotification', {
+        url: "/changeNotification",
+        templateUrl: "app/changeNotification/templates/changeNotification.html",
+        controller: 'ChangeNotificationController as ChangeNotification',
+        title: 'CHANGE NOTIFICATION'
+    })
+
      .state('companyDetails', {
         url: "/companyDetails",
         templateUrl: "app/companyDetails/templates/companyDetails.html",
