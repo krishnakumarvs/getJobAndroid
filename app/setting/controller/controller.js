@@ -40,7 +40,7 @@
         function Change() {
             $state.go('changePassword');
         }
-        function ChangeNotification{
+        function ChangeNotification(){
             $state.go('changeNotification');
         }
     }
