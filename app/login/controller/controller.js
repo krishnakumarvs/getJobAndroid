@@ -10,14 +10,14 @@
          */
         .controller('LoginController', Login);
 
-    Login.$inject = ['$state', '$filter', '$http', 'config'];
+    Login.$inject = ['$state', '$filter', '$http', 'config', '$location'];
 
-    function Login($state, $filter, $http, config) {
+    function Login($state, $filter, $http, config, $location) {
         var loginVm = this;
         // Variable declarations
         loginVm.currentUser = {};
-        loginVm.currentUser.email = "manu@gmail.com";
-        loginVm.currentUser.password = "mannu";
+        loginVm.currentUser.email = ""; //manu@gmail.com
+        loginVm.currentUser.password = ""; //mannu
 
         // Function declarations
         loginVm.authinticateUser = authinticateUser;
@@ -56,7 +56,7 @@
                 var api_result = response.data.result;
                 if (api_result) {
                     console.log("Authentication success");
-                    $state.go('header.home');
+                    $state.go('home');
                     config.userDetails = response.data.payload;
                 } else {
                     alert(response.data.description);
@@ -66,7 +66,7 @@
                 alert(response.statusText)
             });
 
-            //$state.go('header.home');
+            //$state.go('home');
         }
 
         function SignUp() {
@@ -75,7 +75,8 @@
 
 
         function ForgotPassword() {
-            $state.go('forgotPassword');
+            /*$state.go('forgotPassword');*/
+            $location.path('/forgotPassword');
         }
     }
 

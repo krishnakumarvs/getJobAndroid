@@ -39,7 +39,7 @@
                         var api_result = response.data.result;
                         if (api_result) {
                             alert("Registration successfull");
-                            $state.go('header.profile');
+                            $state.go('profile');
                             config.userDetails = response.data.payload;
                         } else {
                             alert(response.data.description);

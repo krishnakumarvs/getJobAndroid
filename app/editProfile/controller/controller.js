@@ -68,7 +68,7 @@
                  if (api_result) {
                      alert(response.data.description);
                      config.userDetails = response.data.payload;
-                     $state.go('header.profile');
+                     $state.go('profile');
                  } else {
                      alert(response.data.description);
                  }

@@ -33,7 +33,7 @@
 
         function authinticateUser() {
             console.log("Clicked on authenticate user");
-            $state.go('header.home');
+            $state.go('home');
         }
 
         function SignUp() {

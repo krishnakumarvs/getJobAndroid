@@ -21,39 +21,39 @@
 
             switch (pageNo) {
                 case 1:
-                     $state.go('header.home');
+                     $state.go('home');
                     // console.log("going to header profile")
                     break;
                  case 2:
-                     $state.go('header.profile');
+                     $state.go('profile');
                     // console.log("going to header profile")
                     break;
                 case 3:
-                     $state.go('header.announcement');
+                     $state.go('announcement');
                     break;
 
                 case 4:
-                     $state.go('header.notification');
+                     $state.go('notification');
                     break;
                 case 5:
-                     $state.go('header.feedback');
+                     $state.go('feedback');
                     break;
                 case 6:
-                     $state.go('header.about');
+                     $state.go('about');
                     break;
                 case 7:
-                     $state.go('header.help');
+                     $state.go('help');
                     break;
                 case 8:
-                     $state.go('header.setting');
+                     $state.go('setting');
                     break;
                 case 9:
-                     $state.go('header.message');
+                     $state.go('message');
                 case 10:
                      $state.go('login');
                     break;    
                 default:
-                    //$state.go('header.tasks')
+                    //$state.go('tasks')
             }
         }
     }

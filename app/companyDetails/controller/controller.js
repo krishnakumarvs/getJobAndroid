@@ -27,7 +27,7 @@
          }
 
          function Gotopage() {
-             $state.go('header.home');
+             $state.go('home');
          }
 
 

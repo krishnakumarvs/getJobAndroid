@@ -23,7 +23,7 @@
         function passwordss() {
             
                             alert("successfull");
-                            $state.go('header.home');
+                            $state.go('home');
                            
         }
     }

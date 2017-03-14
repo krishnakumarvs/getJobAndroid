@@ -33,7 +33,7 @@
                      console.log(config.announcement);
                      announcementDetailsVm.announcement = config.announcement;
                  } else {
-                     $state.go('header.home');
+                     $state.go('home');
                  }
              }
          }
@@ -52,7 +52,7 @@
                  var api_result = response.data.result;
                  if (api_result) {
                      alert("Applied successfully");
-                     $state.go('header.home');
+                     $state.go('home');
                  } else {
                      alert(response.data.description);
                  }
