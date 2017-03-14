@@ -15,7 +15,8 @@
         getAllCompanies: prefix + "getAllCompanies",
         forgotPassword: prefix + "forgotPassword",
         deleteNotification: prefix + "deleteNotification",
-        deleteMessage: prefix + "deleteMessage"
+        deleteMessage: prefix + "deleteMessage",
+        getRecentInterviewDates: prefix + "getRecentInterviewDates"
     };
 
     function recalculateUrls(prefix) {

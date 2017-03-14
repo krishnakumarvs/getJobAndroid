@@ -15,19 +15,34 @@
 					<div class="list list-inset tt">
                 		<label class="item item-input">
                 		<i class="icon ion-search placeholder-icon"></i>
-                		<input type="text" placeholder="Search" width="100%">
+                		<input type="text" placeholder="Search" width="100%" ng-model="searchKey">
                 		</label>
            			</div>
            		</div>
             	<div class="col-10"></div>
 			</div>
 
-			<div class="row"></div>
+			<div class="row" ng-if="Home.recentInterviews && Home.recentInterviews.length>0" style="margin-top:5px;">
+
+				<div class="col-10">
+				</div>
+				<div class="col-80" style="    background-color: rgba(178, 156, 221, 0.64);border-radius: 20px;">
+					<center style="background-color: red;border-radius: 20px;">NOTIFICATIONS</center>
+					<div class="row" ng-repeat="interview in Home.recentInterviews">
+						<div class="col">{{interview.description}}
+						</div>
+					</div>
+
+				</div>
+				<div class="col-10">
+				</div>
+			</div>
+
 			<br>
 
 			<div class="after_border">
 				
-				<a class="item item-thumbnail-left" ng-click="Home.goToCompanyDetails(company)" ng-repeat="company in Home.allCompanies">
+				<a class="item item-thumbnail-left" ng-click="Home.goToCompanyDetails(company)" ng-repeat="company in Home.allCompanies | filter : searchKey">
 			      <img src="img/logo.jpg" ng-if="!company.photo">
 			      <img ng-src="{{Home.serverUrl+company.photo}}" ng-if="company.photo">
 

@@ -17,7 +17,7 @@
         homePageVm.GotoViewTask = GotoViewTask;
         homePageVm.goToCompanyDetails = goToCompanyDetails;
 
-        homePageVm.serverUrl = config.API_URL.serverUrl; 
+        homePageVm.serverUrl = config.API_URL.serverUrl;
 
         activate();
 
@@ -34,8 +34,6 @@
                 }).then(function mySucces(response) {
                     var api_result = response.data.result;
                     if (api_result) {
-                        console.log("notifications fetching success");
-                        console.log(response.data.payload);
                         homePageVm.allCompanies = response.data.payload;
                     } else {
                         alert(response.data.description);
@@ -44,6 +42,26 @@
                     console.log(response.statusText);
                 });
             }
+            getRecentInterviews();
+        }
+
+        function getRecentInterviews() {
+            $http({
+                method: "POST",
+                url: config.API_URL.getRecentInterviewDates,
+                data: {
+                    userId: config.userDetails.userId
+                }
+            }).then(function mySucces(response) {
+                var api_result = response.data.result;
+                if (api_result) {
+                    console.log("Recent interview dates fetched success");
+                    console.log(response.data.payload);
+                    homePageVm.recentInterviews = response.data.payload;
+                }
+            }, function myError(response) {
+                console.log(response.statusText);
+            });
         }
 
         function GotoViewTask() {
