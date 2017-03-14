@@ -22,7 +22,18 @@
         console.log(prefix);
         API_URL = {
             serverUrl: prefix,
-            login: prefix + "login"
+            login: prefix + "login",
+            getAnnouncement: prefix + "getAnnouncement",
+            getMessages: prefix + "getMessages",
+            getNotifications: prefix + "getNotifications",
+            sendFeedback: prefix + "sendFeedback",
+            editUserDetails: prefix + "editUserDetails",
+            fileUpload: prefix + "upload",
+            applyJob: prefix + "applyJob",
+            registration: prefix + "registration",
+            getAllCompanies: prefix + "getAllCompanies",
+            forgotPassword: prefix + "forgotPassword",
+            deleteNotification: prefix + "deleteNotification"
         }
         console.log(API_URL);
         config.API_URL = API_URL;

@@ -23,8 +23,19 @@
         loginVm.authinticateUser = authinticateUser;
         loginVm.SignUp = SignUp;
         loginVm.ForgotPassword = ForgotPassword;
+        loginVm.changeServerIp = changeServerIp;
 
         activate();
+
+        function changeServerIp() {
+            var newPrefix = window.prompt("Enter server url", config.prefix);
+            if (newPrefix) {
+                config.prefix = newPrefix;
+                config.recalculateUrls(newPrefix);
+                console.log(newPrefix);
+                console.log(config.prefix);
+            }
+        }
 
         function activate() {
             // To initialize anything before the project starts
@@ -63,7 +74,7 @@
         }
 
 
-        function ForgotPassword(){
+        function ForgotPassword() {
             $state.go('forgotPassword');
         }
     }
