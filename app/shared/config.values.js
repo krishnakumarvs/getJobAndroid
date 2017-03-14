@@ -14,7 +14,8 @@
         registration: prefix + "registration",
         getAllCompanies: prefix + "getAllCompanies",
         forgotPassword: prefix + "forgotPassword",
-        deleteNotification: prefix + "deleteNotification"
+        deleteNotification: prefix + "deleteNotification",
+        deleteMessage: prefix + "deleteMessage"
     };
 
     function recalculateUrls(prefix) {

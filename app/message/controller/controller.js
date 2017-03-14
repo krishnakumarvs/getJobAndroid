@@ -26,12 +26,12 @@
 
 
         function deleteMessage(message) {
-            console.log(notification);
+            console.log(message);
             $http({
                 method: "POST",
                 url: config.API_URL.deleteMessage,
                 data: {
-                    notificationId: message.id
+                    messageId: message.id
                 }
             }).then(function mySucces(response) {
                 var api_result = response.data.result;
@@ -58,6 +58,7 @@
                         userId: config.userDetails.userId
                     }
                 }).then(function mySucces(response) {
+                    console.log(response.data);
                     var api_result = response.data.result;
                     if (api_result) {
                         console.log("messages fetching success");

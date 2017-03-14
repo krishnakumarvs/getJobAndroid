@@ -5,13 +5,41 @@
 			<div class="row after_border" ng-repeat="message in Message.messages" ng-if="Message.messages.length>0">
 				<div class="col-10"></div>
 				<div class="col">
-					<div class="row icon_align" ><img src="img/close.png" ng-click="Messages.deleteMessage(message)"></div>
-					<div class="row">{{message.title}}</div>
-					<div class="row">{{message.comppanyname}}</div>
-					<div class="row">{{message.description}}</div>
-					<div class="row">{{message.post}}</div>
-					<div class="row">{{message.date}}</div>
-					<div class="row">{{message.time}}</div>
+					<div class="row" >
+						<div class="col">
+							<img class="message-close-icon" src="img/close.png" ng-click="Message.deleteMessage(message)">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col" style="font-weight:bold;">
+							{{message.title}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							{{message.comppanyname}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							{{message.description}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							{{message.post}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							{{message.date}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							{{message.time}}
+						</div>
+					</div>
 
 				</div>
 				<div class="col-10"></div>

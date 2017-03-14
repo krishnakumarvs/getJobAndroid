@@ -2,14 +2,23 @@
 	<ion-content class="">
 		<div class="ion-content ">
 				<div class="row after_border" ng-repeat="notification in Notification.notifications" ng-if="Notification.notifications.length>0">
-				<div class="col-10"></div>
-				<div class="col">
-					<div class="row icon_align icon-size" ><img src="img/close.png" ng-click="Notification.deleteNotification(notification)"></div>
-					<div class="row">{{notification.title}}</div>
-					<div class="row">{{notification.description}}</div>
+					<div class="col-10"></div>
+					<div class="col-80">
+						<div class="row">
+							<div class="col">
+								<img src="img/close.png" class="notification-close-icon" ng-click="Notification.deleteNotification(notification)">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">{{notification.title}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">{{notification.description}}
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-10"></div>
-  			</div>
 
   			<div><br><center style="font-weight: bold;" ng-if="Notification.notifications.length==0">No new notifications</center>
   			</div>
