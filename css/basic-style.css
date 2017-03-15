@@ -230,3 +230,13 @@ body {
 .item {
   background: none !important; 
 }
+
+.icon_settings{
+  width: 20% !important;
+    height: 50% !important;
+}
+
+.image-profile{
+  width: 767%;
+    height: 142%;
+}
