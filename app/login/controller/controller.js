@@ -76,7 +76,7 @@
 
         function ForgotPassword() {
             /*$state.go('forgotPassword');*/
-            $location.path('/forgotPassword');
+            $location.path('/forgot');
         }
     }
 

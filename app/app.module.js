@@ -185,6 +185,13 @@ angular.module(appName, ['ionic'])
         title: 'REGISTRATION'
     })
 
+    .state('forgot', {
+        url: "/forgot",
+        templateUrl: "app/registration/templates/forgot-new.html",
+        controller: 'ForgotController as Forg',
+        title: 'Forgot password'
+    })
+
 
     .state('forgotPassword', {
         url: "/forgotPassword",
