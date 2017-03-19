@@ -17,8 +17,10 @@
          // Variable declarations
          editProfileVm.editUserDetails = editUserDetails;
          var pic = "";
+         var picResume = "";
 
          var backendUrl = config.API_URL.fileUpload;
+         var backendUrlResume = config.API_URL.fileUploadResume;
 
          function getFileExtension(filename) {
              var ext = /^.+\.([^.]+)$/.exec(filename);
@@ -48,6 +50,13 @@
                  uploadImage();
              }
 
+             if (document.getElementById('fileupload_res').files[0]) {
+                picResume = new Date().getTime() + "_res." + getFileExtension(document.getElementById('fileupload_res').files[0].name);
+                uploadResume();
+             }
+
+
+
              $http({
                  method: "POST",
                  url: config.API_URL.editUserDetails,
@@ -60,7 +69,8 @@
                      dob: editProfileVm.userDetails.dob,
                      experience: editProfileVm.userDetails.experience,
                      qualification: editProfileVm.userDetails.qualification,
-                     pic: (pic) ? pic : config.userDetails.photo
+                     pic: (pic) ? pic : config.userDetails.photo,
+                     resume: (picResume) ? picResume : config.userDetails.resume
                  }
              }).then(function mySucces(response) {
                  console.log(response.data);
@@ -90,6 +100,26 @@
 
              .success(function(result) {
                  console.log("Succesfully uploaded image");
+             })
+
+             .error(function(result) {
+                 console.log("Faliure");
+             });
+         }
+
+         function uploadResume() {
+             var fileToBeUploaded = document.getElementById('fileupload_res').files[0];
+             var fd = new FormData();
+             fd.append('upfile', fileToBeUploaded);
+             $http.post(backendUrlResume + "?title=" + picResume, fd, {
+                 transformRequest: angular.identity,
+                 headers: {
+                     'Content-Type': undefined
+                 }
+             })
+
+             .success(function(result) {
+                 console.log("Succesfully uploaded resume");
              })
 
              .error(function(result) {

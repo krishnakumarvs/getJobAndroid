@@ -10,13 +10,15 @@
         sendFeedback: prefix + "sendFeedback",
         editUserDetails: prefix + "editUserDetails",
         fileUpload: prefix + "upload",
+        fileUploadResume: prefix + "upload_resume",
         applyJob: prefix + "applyJob",
         registration: prefix + "registration",
         getAllCompanies: prefix + "getAllCompanies",
         forgotPassword: prefix + "forgotPassword",
         deleteNotification: prefix + "deleteNotification",
         deleteMessage: prefix + "deleteMessage",
-        getRecentInterviewDates: prefix + "getRecentInterviewDates"
+        getRecentInterviewDates: prefix + "getRecentInterviewDates",
+        changePassword : prefix + "changePassword"
     };
 
     function recalculateUrls(prefix) {
@@ -24,18 +26,22 @@
         console.log(prefix);
         API_URL = {
             serverUrl: prefix,
-            login: prefix + "login",
-            getAnnouncement: prefix + "getAnnouncement",
-            getMessages: prefix + "getMessages",
-            getNotifications: prefix + "getNotifications",
-            sendFeedback: prefix + "sendFeedback",
-            editUserDetails: prefix + "editUserDetails",
-            fileUpload: prefix + "upload",
-            applyJob: prefix + "applyJob",
-            registration: prefix + "registration",
-            getAllCompanies: prefix + "getAllCompanies",
-            forgotPassword: prefix + "forgotPassword",
-            deleteNotification: prefix + "deleteNotification"
+        login: prefix + "login",
+        getAnnouncement: prefix + "getAnnouncement",
+        getMessages: prefix + "getMessages",
+        getNotifications: prefix + "getNotifications",
+        sendFeedback: prefix + "sendFeedback",
+        editUserDetails: prefix + "editUserDetails",
+        fileUpload: prefix + "upload",
+        fileUploadResume: prefix + "upload_resume",
+        applyJob: prefix + "applyJob",
+        registration: prefix + "registration",
+        getAllCompanies: prefix + "getAllCompanies",
+        forgotPassword: prefix + "forgotPassword",
+        deleteNotification: prefix + "deleteNotification",
+        deleteMessage: prefix + "deleteMessage",
+        getRecentInterviewDates: prefix + "getRecentInterviewDates",
+        changePassword : prefix + "changePassword"
         }
         console.log(API_URL);
         config.API_URL = API_URL;

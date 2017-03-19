@@ -42,27 +42,27 @@
                     console.log(response.statusText);
                 });
             }
-            getRecentInterviews();
+           // getRecentInterviews();
         }
 
-        function getRecentInterviews() {
-            $http({
-                method: "POST",
-                url: config.API_URL.getRecentInterviewDates,
-                data: {
-                    userId: config.userDetails.userId
-                }
-            }).then(function mySucces(response) {
-                var api_result = response.data.result;
-                if (api_result) {
-                    console.log("Recent interview dates fetched success");
-                    console.log(response.data.payload);
-                    homePageVm.recentInterviews = response.data.payload;
-                }
-            }, function myError(response) {
-                console.log(response.statusText);
-            });
-        }
+        // function getRecentInterviews() {
+        //     $http({
+        //         method: "POST",
+        //         url: config.API_URL.getRecentInterviewDates,
+        //         data: {
+        //             userId: config.userDetails.userId
+        //         }
+        //     }).then(function mySucces(response) {
+        //         var api_result = response.data.result;
+        //         if (api_result) {
+        //             console.log("Recent interview dates fetched success");
+        //             console.log(response.data.payload);
+        //             homePageVm.recentInterviews = response.data.payload;
+        //         }
+        //     }, function myError(response) {
+        //         console.log(response.statusText);
+        //     });
+        // }
 
         function GotoViewTask() {
 
