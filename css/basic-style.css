@@ -92,14 +92,24 @@ textarea.background-modify{
   margin-left: 200px;
 }
 
+.col.announcement-border{
+  background-color: #de74d6 !important;
+    border-radius: 30px !important;
+}
 
-.row.announcement-button{
-  margin-left: 70%;
-  background-color: green;
-  color: white;
-  font-weight: lighter;
-  border-radius: 10%;
-  border-color: green;  
+.row.announcement-alige{
+  margin-top: 5px !important;
+    margin-bottom: 17px !important;
+}
+
+.announcement-button{
+  /*margin-left: 70%;*/
+  /*background-color: green !important;*/
+  color: white !important;
+  font-weight: lighter !important;
+  border-radius: 10% !important;
+  border-color: green !important;  
+  padding-left: 75% !important;
 }
 
 .feedback-select-box {
@@ -123,7 +133,15 @@ textarea.background-modify{
 
     .button_font_color{
       color : teal !important;
+      font-style: oblique !important;
+       
+    font-family: cursive !important;
+    }
 
+    .button_set{
+      float:right;
+      text-align:right;
+      z-index:20000;
     }
 
     .heading{
@@ -239,4 +257,18 @@ body {
 .image-profile{
   width: 767%;
     height: 142%;
+}
+
+.image-profile-size{
+  width: 91%;
+    border-radius: 108px;
+}
+
+.icon-editProfile{
+  margin-left: 84px !important;
+    margin-right: -85px !important;
+}
+
+.icon-attach{
+  button-assertive
 }

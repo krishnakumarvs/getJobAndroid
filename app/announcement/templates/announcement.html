@@ -48,28 +48,40 @@
    	</li>
    </ul>
 </div>
+
 <ion-view title={{pageTitle}}>
 	<ion-content class="">
 		<div class="ion-content ">
 			<br><br>		
-			<div class="row after_border" ng-repeat="announcement in Announcement.allAnnouncement">
-				<div class="col-10"></div>
-				<div class="col">
+
+      <div class="row">
+        <div class="col-10">
+        </div>
+        <div class="col heading"><center><h4>
+          ANNOUNCEMENT</h4>
+          </center>
+        </div>
+        <div class="col-10">
+        </div>
+      </div>
+
+			<div class="row announcement-alige" ng-repeat="announcement in Announcement.allAnnouncement"><br>
+				<div class="col-10"></div><br>
+				<div class="col announcement-border">
 					<div class="row" style="color:white;">
-						<div class="col">{{announcement.name}}
-						</div>
+					<div class="col">{{announcement.name}}</div>
 					</div>
 					<div class="row" style="color:white;">
-						<div class="col">{{announcement.description}}
-						</div>
+					<div class="col">{{announcement.description}}</div>
 					</div>
-                    <div class="row">
-                    	<div class="col announcement-button">
-                    	<input type="button" class="announcement-button" value="Details" name="Details" ng-click="Announcement.showDetails(announcement)"></div>
-                    </div>
-                </div>
-				<div class="col-10"></div>
-  			</div>
+          <div class="row">
+        	<div class="col announcement-button">
+        	<input type="button"  value="Details" name="Details" ng-click="Announcement.showDetails(announcement)"></div>
+          </div>
+      
+        </div>
+			 <div class="col-10"></div>
+  	  </div>
 
 		<!-- <label class="item item-input item-floating-label" >
 			

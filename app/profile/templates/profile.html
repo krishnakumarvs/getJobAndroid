@@ -51,7 +51,7 @@
 <ion-view title={{pageTitle}}>
 	<ion-content class="">
 		<div class="ion-content ">
-			<!-- <div class="row">
+			<div class="row">
 				<div class="col-10">
 				</div>
 				<div class="col"><center><h4>
@@ -60,7 +60,7 @@
 				</div>
 				<div class="col-10">
 				</div>
-			</div> --><br><br>
+			</div>
 
             <div class="row">	
             </div>
@@ -71,7 +71,7 @@
 				<div class="col-10">
 				</div>
 				<div class="col"><center>
-					<img style="width:100%;" ng-src="{{Profile.userImage}}" alt="dp"></center>
+					<img class="image-profile-size" ng-src="{{Profile.userImage}}" alt="dp"></center>
 				</div>
 				<div class="col-10">
 				</div>
@@ -173,12 +173,12 @@
 				<div class="col-10">
 				</div>
 				<div class="col">
-					<center>
+					
 						<input type="button" class="userimage button button-clear button-assertive" name="Update" value="Update" ng-click="Profile.updateProfile()" style="float: right;" >
 						
 						
 						</input>
-					</center>
+				
 				</div>
 				<div class="col-10">
 				</div>
