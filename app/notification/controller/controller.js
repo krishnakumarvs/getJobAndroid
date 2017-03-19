@@ -71,24 +71,7 @@
                 $state.go('login');
             } else {
                 getRecentInterviews();
-                // $http({
-                //     method: "POST",
-                //     url: config.API_URL.getNotifications,
-                //     data: {
-                //         userId: config.userDetails.userId
-                //     }
-                // }).then(function mySucces(response) {
-                //     var api_result = response.data.result;
-                //     if (api_result) {
-                //         console.log("notifications fetching success");
-                //         console.log(response.data.payload);
-                //         notificationVm.notifications = response.data.payload;
-                //     } else {
-                //         alert(response.data.description);
-                //     }
-                // }, function myError(response) {
-                //     console.log(response.statusText);
-                // });
+                
             }
         }
 

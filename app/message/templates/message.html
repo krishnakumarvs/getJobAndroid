@@ -66,18 +66,23 @@
          </div>
 
 			<div class="row after_border" ng-repeat="message in Message.messages" ng-if="Message.messages.length>0">
-				<div class="col-10"></div>
+				<div class="col-5"></div>
 				<div class="col">
+              
+
+                <div class="row">
+                  <div class="col"><div class="col" style="margin-left: 90%;">
+                     <img class="message-close-icon" src="img/close.png" ng-click="Message.deleteMessage(message)">
+                  </div></div>
+</div>
+
 					<div class="row" >
-						<div class="col">
-							<img class="message-close-icon" src="img/close.png" ng-click="Message.deleteMessage(message)">
-						</div>
+                  <div class="col" style="font-weight:bold;">
+                     {{message.title}}
+                  </div>
+						
 					</div>
-					<div class="row">
-						<div class="col" style="font-weight:bold;">
-							{{message.title}}
-						</div>
-					</div>
+					
 					<div class="row">
 						<div class="col">
 							{{message.comppanyname}}
@@ -94,18 +99,18 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col">
+						<div class="col">Interview Date   :
 							{{message.date}}
 						</div>
 					</div>
 					<div class="row">
-						<div class="col">
+						<div class="col">Interview Time   :   
 							{{message.time}}
 						</div>
 					</div>
 
 				</div>
-				<div class="col-10"></div>
+				<div class="col-5"></div>
   			</div>
 
   			<div><br><center style="font-weight: bold;" ng-if="Message.messages.length==0">No new messages</center>
