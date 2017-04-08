@@ -52,7 +52,7 @@
                  var api_result = response.data.result;
                  if (api_result) {
                      alert("Applied successfully");
-                     $state.go('home');
+                     $state.go('announcement');
                  } else {
                      alert(response.data.description);
                  }
