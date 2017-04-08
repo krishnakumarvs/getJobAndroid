@@ -93,7 +93,7 @@ textarea.background-modify{
 }
 
 .col.announcement-border{
-  background-color: #de74d6 !important;
+  /*background-color: #de74d6 !important;*/
     border-radius: 30px !important;
 }
 
